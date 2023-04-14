@@ -11,25 +11,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$comic->title}}</td>
-                </tr>
-                <tr>
-                    <td>{{$comic->description}}</td>
-                </tr>
-                <tr>
+                    <td><strong>Titolo:</strong> {{$comic->title}}</td>
+                    <td><strong>Descrizione:</strong> {{$comic->description}}</td>
                     <td><img src="{{$comic->thumb}}" alt=""></td>
-                </tr>
-                <tr>
-                    <td>{{$comic->price}}</td>
-                </tr>
-                <tr>
-                    <td>{{$comic->series}}</td>
-                </tr>
-                <tr>
-                    <td>{{$comic->sale_date}}</td>
-                </tr>
-                <tr>
-                    <td>{{$comic->type}}</td>
+                    <td><strong>Prezzo:</strong> {{$comic->price}}</td>
+                    <td><strong>Serie:</strong> {{$comic->series}}</td>
+                    <td><strong>Data d'uscita:</strong> {{$comic->sale_date}}</td>
+                    <td><strong>Genere:</strong> {{$comic->type}}</td>
                 </tr>
             </tbody>
             @endforeach
