@@ -125,5 +125,17 @@ class ComicsSeeder extends Seeder
                 "type" => "graphic novel"
             ],
         ];
+
+        foreach ($comics as $comic) {
+            $new_comic = new Comic();
+            $new_comic->title = $comic['title'];
+            $new_comic->title = $comic['description'];
+            $new_comic->title = $comic['thumb'];
+            $new_comic->title = $comic['price'];
+            $new_comic->title = $comic['series'];
+            $new_comic->title = $comic['sales_date'];
+            $new_comic->title = $comic['type'];
+            $new_comic->save();
+        }
     }
 }
