@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section
+@section('content')
 <div class="container">
     <div class="row">
         <table class="table">
@@ -8,17 +8,31 @@
                     <th scope="col">First</th>
                 </tr>
             </thead>
+            @foreach ($comics as $comic)
             <tbody>
                 <tr>
-                    <td>Mark</td>
+                    <td>{{$comic->title}}</td>
                 </tr>
                 <tr>
-                    <td>@fat</td>
+                    <td>{{$comic->description}}</td>
                 </tr>
                 <tr>
-                    <td>@twitter</td>
+                    <td><img src="{{$comic->thumb}}" alt=""></td>
+                </tr>
+                <tr>
+                    <td>{{$comic->price}}</td>
+                </tr>
+                <tr>
+                    <td>{{$comic->series}}</td>
+                </tr>
+                <tr>
+                    <td>{{$comic->sale_date}}</td>
+                </tr>
+                <tr>
+                    <td>{{$comic->type}}</td>
                 </tr>
             </tbody>
+            @endforeach
         </table>
     </div>
 </div>
