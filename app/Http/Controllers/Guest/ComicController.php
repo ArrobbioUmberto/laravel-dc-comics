@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
-    public function homepage()
+    public function index()
     {
         $comics = Comic::all();
         $data = [
