@@ -3,12 +3,12 @@
 <div class="container">
     <div class="row">
         <table class="table">
+            @foreach ($comics as $comic)
             <thead>
                 <tr>
-                    <th scope="col">First</th>
+                    <th scope="col">{{$comic->id}}</th>
                 </tr>
             </thead>
-            @foreach ($comics as $comic)
             <tbody>
                 <tr>
                     <td>{{$comic->title}}</td>
