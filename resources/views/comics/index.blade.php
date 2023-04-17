@@ -3,28 +3,39 @@
 <div class="container">
     <div class="row">
         <table class="table">
-            @foreach ($comics as $comic)
+
 
             <thead>
                 <tr>
-                    <th scope="col">{{$comic->id}}</th>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col"></th>
+                    <th scope="col">Prezzo</th>
+                    <th scope="col">Serie</th>
+                    <th scope="col">Data d'uscita</th>
+                    <th scope="col">Genere</th>
+
                 </tr>
             </thead>
 
             <tbody>
+                @foreach ($comics as $comic)
                 <tr>
-                    <td><strong>Titolo:</strong><a href="{{route('comics.show', $comic->id)}}"> {{$comic->title}}</a></td>
-                    <td><strong>Descrizione:</strong> {{$comic->description}}</td>
+                    <td><a href="{{route('comics.show', $comic->id)}}"> {{$comic->title}}</a></td>
+                    <td>{{$comic->description}}</td>
                     <td><img src="{{$comic->thumb}}" alt=""></td>
-                    <td><strong>Prezzo:</strong> {{$comic->price}}</td>
-                    <td><strong>Serie:</strong> {{$comic->series}}</td>
-                    <td><strong>Data d'uscita:</strong> {{$comic->sale_date}}</td>
-                    <td><strong>Genere:</strong> {{$comic->type}}</td>
-
+                    <td>{{$comic->price}}</td>
+                    <td> {{$comic->series}}</td>
+                    <td>{{$comic->sale_date}}</td>
+                    <td>{{$comic->type}}</td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm" href="{{ route('comics.edit',$comic) }}">Edit</a>
+                    </td>
                 </tr>
+                @endforeach
             </tbody>
 
-            @endforeach
+
         </table>
     </div>
 </div>
