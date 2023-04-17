@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-auto mt-2">
-            <button type="submit" class="btn btn-primary mb-3">Invia i dati</button>
+            <button type="submit" class="btn btn-primary mb-3">Modifica</button>
         </div>
 </div>
 
