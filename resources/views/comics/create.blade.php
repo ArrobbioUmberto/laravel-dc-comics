@@ -4,8 +4,7 @@
     <h1>AGGIUNGI IL TUO FUMETTO</h1>
 </div>
 <div class="container">
-    <form action="{{ route('comics.store')}}" method=" POST">
-
+    <form action="{{ route('comics.store')}}" method="POST">
         @csrf
         <div class="input-group mb-3">
             <label for="title" class="form-label">Titolo</label>
@@ -58,10 +57,10 @@
         <div class="col-auto mt-2">
             <button type="submit" class="btn btn-primary mb-3">Invia i dati</button>
         </div>
+    </form>
 </div>
 
-</div>
-</form>
+
 
 
 

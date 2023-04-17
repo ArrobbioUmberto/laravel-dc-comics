@@ -4,8 +4,7 @@
     <h1>Modifica: {{$comic->title}}</h1>
 </div>
 <div class="container">
-    <form action="{{ route('comics.store',$comic)}}" method=" POST">
-
+    <form action="{{ route('comics.update',$comic)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="input-group mb-3">
@@ -61,9 +60,9 @@
         <div class="col-auto mt-2">
             <button type="submit" class="btn btn-primary mb-3">Modifica</button>
         </div>
+    </form>
 </div>
 
-</div>
-</form>
+
 
 @endsection
