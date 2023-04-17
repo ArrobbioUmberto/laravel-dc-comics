@@ -2,6 +2,13 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-3 me-auto">
+            <a class="btn btn-primary" href="{{route('comics.create')}}">Nuovo Comics</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
         <table class="table">
 
 
