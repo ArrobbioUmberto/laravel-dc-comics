@@ -14,10 +14,7 @@ class ComicController extends Controller
 
         return view('comics.index', compact('comics'));
     }
-    public function show(Comic $comic)
-    {
-        return view('comics.show', compact('comic'));
-    }
+
     public function create()
     {
         return view('comics.create');
@@ -38,7 +35,11 @@ class ComicController extends Controller
         $last_comic->save();
 
 
-        return to_route('comics.show', $last_comic);
+        return redirect()->route('comics.show', $last_comic->id);
+    }
+    public function show(Comic $comic)
+    {
+        return view('comics.show', compact('comic'));
     }
     public function edit(Comic $comic)
     {
