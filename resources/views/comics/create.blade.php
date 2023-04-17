@@ -20,7 +20,7 @@
 
         <div class="mb-3">
             <label for="thumb" class="form-label">Immagine di copertina (url)</label>
-            <input class="form-control" type="file" id="formFileMultiple" multiple id="thumb" name="thumb">
+            <input class="form-control" type="text" id="thumb" name="thumb">
         </div>
 
         <div class="input-group mb-3">
