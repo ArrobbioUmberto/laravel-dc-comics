@@ -9,7 +9,7 @@
         <div class="input-group mb-3">
             <label for="title" class="form-label">Titolo</label>
             <div class="input-group">
-                <input type="text" class="form-control @error('title') is-invalid @enderror" value="{{old('title')}}" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="title" name="title">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" value="{{old('title')??""}}" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="title" name="title">
                 @error('title')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -34,7 +34,7 @@
 
         <div class="mb-3">
             <label for="thumb" class="form-label">Immagine di copertina (url)</label>
-            <input class="form-control @error('thumb') is-invalid @enderror" value="{{old('thumb')}}" type="text" id="thumb" name="thumb">
+            <input class="form-control @error('thumb') is-invalid @enderror" value="{{old('thumb')??""}}" type="text" id="thumb" name="thumb">
             @error('thumb')
             <div class="invalid-feedback">
                 {{$message}}
@@ -46,7 +46,7 @@
             <label for="price" class="form-label">Prezzo</label>
             <div class="input-group">
                 <span class="input-group-text">$</span>
-                <input type="text" placeholder="" class="form-control @error('price') is-invalid @enderror" value="{{old('price ')}}" aria-label="Amount (to the nearest dollar)" id="price" name="price">
+                <input type="text" placeholder="" class="form-control @error('price') is-invalid @enderror" value="{{old('price')??""}}" aria-label="Amount (to the nearest dollar)" id="price" name="price">
                 @error('price')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -58,7 +58,7 @@
         <div class="input-group mb-3">
             <label for="series" class="form-label">Serie</label>
             <div class="input-group">
-                <input type="text" class="form-control @error('series') is-invalid @enderror" value="{{old('series')}}" placeholder="" aria-label="Username" id="series" name="series">
+                <input type="text" class="form-control @error('series') is-invalid @enderror" value="{{old('series')??""}}" placeholder="" aria-label="Username" id="series" name="series">
                 @error('series')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -70,7 +70,7 @@
         <div class="input-group mb-3">
             <label for="sale-date" class="form-label">Data d'uscita</label>
             <div class="input-group">
-                <input type="text" class="form-control @error('sale_date') is-invalid @enderror" value="{{old('sale_date')}}" placeholder="" aria-label="Username" id="sale-date" name="sale_date">
+                <input type="text" class="form-control @error('sale_date') is-invalid @enderror" value="{{old('sale_date')??""}}" placeholder="" aria-label="Username" id="sale-date" name="sale_date">
                 @error('sale_date')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -82,7 +82,11 @@
         <div class="input-group">
             <label for="type" class="form-label">Genere</label>
             <div class="input-group">
-                <input type="text" class="form-control @error('type') is-invalid @enderror" value="{{old('type')}}" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="type" name="type">
+                <select class="form-select @error('type') is-invalid @enderror" id="type" name="type" aria-label="Default select example">
+                    <option selected>Scegli il genere</option>
+                    <option value="comic book">Comic Book</option>
+                    <option value="graphic novel">Graphic Novel</option>
+                </select>
                 @error('type')
                 <div class="invalid-feedback">
                     {{$message}}

@@ -83,7 +83,11 @@
         <div class="input-group">
             <label for="type" class="form-label">Genere</label>
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="type" name="type" value="{{old('type',$comic->type)}}">
+                <select class="form-select" id="type" name="type" value="{{old('type',$comic->type)}}" aria-label="Default select example">
+                    <option>Scegli il genere</option>
+                    <option @selected ( old('type')=='comic book' ) value="comic book">Comic Book</option>
+                    <option @selected ( old('type')=='graphic novel' ) value="graphic novel">Graphic Novel</option>
+                </select>
                 @error('type')
                 <div class="invalid-feedback">
                     {{$message}}
