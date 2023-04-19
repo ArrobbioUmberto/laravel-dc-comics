@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="title" name="title" value="{{old('title',$comic->title)}}">
                 @error('title')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -27,7 +27,7 @@
                 </textarea>
                 @error('title')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -38,7 +38,7 @@
             <input class="form-control" type="text" id="thumb" name="thumb" value="{{old('thumb',$comic->thumb)}}">
             @error('thumb')
             <div class="invalid-feedback">
-                {{$$message}}
+                {{$message}}
             </div>
             @enderror
         </div>
@@ -50,7 +50,7 @@
                 <input type="text" placeholder="" class="form-control" aria-label="Amount (to the nearest dollar)" id="price" name="price" value="{{old('price',$comic->price)}}">
                 @error('price')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -62,7 +62,7 @@
                 <input type="text" class="form-control" placeholder="" aria-label="Username" id="series" name="series" value="{{old('series',$comic->series)}}">
                 @error('series')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -74,7 +74,7 @@
                 <input type="text" class="form-control" placeholder="" aria-label="Username" id="sale-date" name="sale_date" value="{{old('sale_date',$comic->sale_date)}}">
                 @error('sale_date')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -86,7 +86,7 @@
                 <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="type" name="type" value="{{old('type',$comic->type)}}">
                 @error('type')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>

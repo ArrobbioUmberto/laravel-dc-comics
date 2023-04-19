@@ -12,7 +12,7 @@
                 <input type="text" class="form-control @error('title') is-invalid @enderror" value="{{old('title')}}" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="title" name="title">
                 @error('title')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -26,7 +26,7 @@
                 </textarea>
                 @error('description')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -37,7 +37,7 @@
             <input class="form-control @error('thumb') is-invalid @enderror" value="{{old('thumb')}}" type="text" id="thumb" name="thumb">
             @error('thumb')
             <div class="invalid-feedback">
-                {{$$message}}
+                {{$message}}
             </div>
             @enderror
         </div>
@@ -49,7 +49,7 @@
                 <input type="text" placeholder="" class="form-control @error('price') is-invalid @enderror" value="{{old('price ')}}" aria-label="Amount (to the nearest dollar)" id="price" name="price">
                 @error('price')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -61,7 +61,7 @@
                 <input type="text" class="form-control @error('series') is-invalid @enderror" value="{{old('series')}}" placeholder="" aria-label="Username" id="series" name="series">
                 @error('series')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -73,7 +73,7 @@
                 <input type="text" class="form-control @error('sale_date') is-invalid @enderror" value="{{old('sale_date')}}" placeholder="" aria-label="Username" id="sale-date" name="sale_date">
                 @error('sale_date')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
@@ -85,7 +85,7 @@
                 <input type="text" class="form-control @error('type') is-invalid @enderror" value="{{old('type')}}" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="type" name="type">
                 @error('type')
                 <div class="invalid-feedback">
-                    {{$$message}}
+                    {{$message}}
                 </div>
                 @enderror
             </div>
