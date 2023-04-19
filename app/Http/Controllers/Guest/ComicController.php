@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
-use illuminate\Validation\Rule;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -23,7 +23,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => 'required|unique|max:255|min:3',
+            'title' => 'required|max:255|min:3',
             'description' => 'nullable|string|max:255|min:3',
             'thumb' => 'required|max:255|url',
             'price' => 'required|max:255|min:3',
