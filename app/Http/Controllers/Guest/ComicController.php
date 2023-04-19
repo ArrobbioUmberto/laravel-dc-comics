@@ -24,11 +24,11 @@ class ComicController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|max:255|min:3',
-            'description' => 'nullable|string|max:255|min:3',
+            'description' => 'required|string|min:3|max:2000',
             'thumb' => 'required|max:255|url',
             'price' => 'required|numeric|between:0,1000',
             'series' => 'required|max:255|min:3',
-            'sale_date' => 'required|date',
+            'sale_date' => 'required|date_format:Y-m-d',
             'type' => [
                 'required',
                 Rule::in(['comic book', 'graphic novel'])
@@ -56,23 +56,31 @@ class ComicController extends Controller
     }
     public function edit(Comic $comic)
     {
+        $types = [
+            'comic book' => 'Comic book',
+            'graphic novel' => 'Graphic novel'
+        ];
         return view('comics.edit', compact('comic'));
     }
-    public function update(Request $request, Comic $comic)
+    public function validation(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required|unique|max:255|min:3',
-            'description' => 'nullable|string|max:255|min:3',
+        return $request->validate([
+            'title' => 'required|max:255|min:3',
+            'description' => 'required|string|min:3|max:2000',
             'thumb' => 'required|max:255|url',
-            'price' => 'required|max:255|min:3',
+            'price' => 'required|numeric|between:0,1000',
             'series' => 'required|max:255|min:3',
-            'sale_date' => 'required|date',
+            'sale_date' => 'required|date_format:Y-m-d',
             'type' => [
                 'required',
                 Rule::in(['comic book', 'graphic novel'])
             ],
         ]);
-
+    }
+    public function update(Request $request, Comic $comic)
+    {
+        $data = $this->validation($request);
+        $comic->update($data);
 
         // $comic->title = $data['title'];
         // $comic->description = $data['description'];
@@ -81,11 +89,13 @@ class ComicController extends Controller
         // $comic->series = $data['series'];
         // $comic->sale_date = $data['sale_date'];
         // $comic->type = $data['type'];
-        $comic->fill($data);
-        $comic->save();
+        // $comic->fill($data);
 
 
-        return to_route('comics.show', $comic);
+
+
+
+        return redirect()->route('comics.show', $comic);
     }
     public function destroy(Comic $comic)
     {
